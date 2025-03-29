@@ -32,7 +32,7 @@ const FormComponent = () => {
             {errors.api && <div className="error-message">{errors.api}</div>}
 
             <div className="form-field">
-              <label className="label">Name:</label>
+              <label className="label">Full Name:</label>
               <Field type="text" name="name" className="input" />
               <ErrorMessage name="name" component="div" className="error" />
             </div>
