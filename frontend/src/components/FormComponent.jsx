@@ -12,7 +12,10 @@ const validationSchema = Yup.object({
 const FormComponent = () => {
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/users/register", values);
+      const response = await axios.post(
+        "http://localhost:5000/api/users/register",
+        values
+      );
       alert(response.data.message);
     } catch (error) {
       setErrors({ api: error.response?.data?.error || "Server Error" });
@@ -43,7 +46,11 @@ const FormComponent = () => {
               <ErrorMessage name="email" component="div" className="error" />
             </div>
 
-            <button type="submit" disabled={isSubmitting} className="submit-button">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="submit-button"
+            >
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </Form>
